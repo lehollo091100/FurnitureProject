@@ -1,0 +1,126 @@
+.shop {
+}
+.shop__container {
+}
+.shop__container .shop__top {
+  position: relative;
+  height: 500px;
+  background-image: url("https://cdn.shopify.com/s/files/1/1503/1122/files/Mask_Group_30_1366x512_crop_center.png?v=1584681526");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.shop__container .shop__top .shop__top-detail {
+  width: 30%;
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  font-size: 20px;
+  font-style: italic;
+}
+.shop__bottom {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  align-items: center;
+}
+.shop__bottom .product__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.shop__bottom .product__list-element {
+  text-align: center;
+  width: 22%;
+  margin: 0px 1.5%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.shop__bottom .product__list-element img {
+  max-width: 99%;
+  max-height: 300px;
+  /* border:1px black solid; */
+
+  object-fit: cover;
+}
+
+.shop__cate {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.shop__cate-wrap {
+  display: flex;
+  justify-content: center;
+}
+.shop__cate-list {
+  width: 55%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid black;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: #251e1a;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: space-around;
+}
+.shop__cate-list .main {
+  font-size: 18px;
+  font-weight: 500;
+}
+.shop__cate-list .list__item {
+  transition: all 0.3s linear;
+}
+
+.shop__cate-list .list__item:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.shop__cate .shop__cate-search {
+  margin-left: 1.5%;
+}
+.shop__cate .shop__cate-search input {
+  height: 20px;
+}
+
+.pagi ul {
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.paper {
+}
+
+/* ======================SHOP====================== */
+@media (max-width: 320px) {
+  .shop__container .shop__top .shop__top-detail {
+    width: 100%;
+    right: 0;
+  }
+  .shop__bottom .product__list-element {
+    width: 100%;
+  }
+}
+@media (max-width: 425px) and (min-width: 321px) {
+  .shop__container .shop__top .shop__top-detail {
+    width: 100%;
+    right: 0;
+  }
+  .shop__bottom .product__list {
+    padding: 0 5%;
+  }
+  .shop__bottom .product__list-element {
+    width: 45%;
+  }
+}
+@media (max-width: 768px) and (min-width: 426px) {
+  .shop__bottom .product__list {
+    padding: 0 5%;
+  }
+  .shop__bottom .product__list-element {
+    width: 30%;
+  }
+}

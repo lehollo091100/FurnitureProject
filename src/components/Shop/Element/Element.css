@@ -1,0 +1,33 @@
+.element {
+  border: 1px black solid;
+  position: relative;
+  overflow: hidden;
+}
+.element::after {
+  content: "Xem chi tiết";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: -30px;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgb(197, 124, 124);
+  transition: all 0.3s linear;
+}
+.element:hover::after {
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================RESPONSIVE=================== */
+@media (max-width: 425px) {
+  .element {
+    min-height: 195px;
+  }
+}

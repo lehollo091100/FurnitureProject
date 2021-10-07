@@ -1,43 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="./index.css">
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>Houseware App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+    
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+</head>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="./Counting-Up-To-Numerical-Values-On-Scroll-jQuery-Countup-js//jquery.countup.js"></script>
+<script src="./Counting-Up-To-Numerical-Values-On-Scroll-jQuery-Countup-js//jquery.countup.min.js"></script>
+<script>
+    $('.counter').countUp(
+            {
+                'time':1000,
+                'delay':30,
+            }
+        );
+  window.onscroll = function() {myFunction()};
+  var header = document.querySelector(".header");
+  function myFunction() {
+      if(header)
+      {
+          var sticky = header.offsetTop;
+          if (window.pageYOffset > sticky) {
+              header.classList.add("fix");
+          } else {
+          header.classList.remove("fix");
+          }
+      } 
+      var windowHeight = window.innerHeight;
+      var reveal = document.querySelectorAll('.element1');
+      for (var i = 0; i < reveal.length; i++) {
+          var revealTop = reveal[i].getBoundingClientRect().top;
+          var revealPoint = 30;
+          if (revealTop < windowHeight - revealPoint) {
+              reveal[i].classList.add('show1');
+          }
+          // else {
+          //     reveal[i].classList.remove('show1');
+          // }
+      }
+      var reveal2 = document.querySelectorAll('.element2');
+      for (var i = 0; i < reveal2.length; i++) {
+          var revealTop = reveal2[i].getBoundingClientRect().top;
+          var revealPoint = 30;
+          if (revealTop < windowHeight - revealPoint) {
+              reveal2[i].classList.add('show2');
+          }
+          // else {
+          //     reveal2[i].classList.remove('show2');
+          // }
+      }
+      var reveal3 = document.querySelectorAll('.element3');
+      for (var i = 0; i < reveal3.length; i++) {
+          var revealTop = reveal3[i].getBoundingClientRect().top;
+          var revealPoint = 20;
+          if (revealTop < windowHeight - revealPoint) {
+              reveal3[i].classList.add('show3');
+          }
+        }    
+  }
+  $(".scrollup__button").click(function () {
+        $('html,body').animate({
+            scrollTop: ($($('html')).offset().top - 80)
+        }, 500);
+    });
+    
+</script>
 </html>
